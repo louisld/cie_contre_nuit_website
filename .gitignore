@@ -1,0 +1,12 @@
+# Python
+env/
+__pycache__/
+
+# Flask
+.env
+
+# Static files
+node_modules/
+
+# Yarn
+app/static/assets/

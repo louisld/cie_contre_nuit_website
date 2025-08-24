@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title -%}{%- endblock %}</title>
+
+    {# DEV ASSETS #}
+    {% if vite_asset('main.js').client %}
+        <script type="module" src="{{ vite_asset('main.js').client }}"></script>
+    {% endif %}
+
+    {# PROD CSS#}
+    {% for css_file in vite_asset('main.js').css %}
+        <link rel="stylesheet" href="{{ css_file }}">
+    {% endfor %}
+</head>
+<body>
+    <h1>Compagnie à Contre-nuit</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.index') }}">Accueil</a></li>
+            <li>La Compagnie</li>
+            <li><a href="{{ url_for('main.spectacles') }}">Spectacles</a></li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    {# PROD JS #}
+    <script type="module" src="{{ vite_asset('main.js').js }}"></script>
+</body>
+</html>
