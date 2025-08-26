@@ -1,3 +1,49 @@
-$primary: #ff3860;
+@use "bulma-custom";
 
-@import 'bulma/bulma';
+@font-face {
+    font-family: "Roboto";
+    src: url("/static/fonts/Roboto-Regular.ttf");
+}
+
+// Sticky footer
+html, body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    font-family: "Roboto";
+    background-color: black;
+    color: white;
+
+    .navbar {
+        font-size: 3rem;
+
+        .navbar-brand img {
+            height: 5rem;
+            max-height: none;
+        }
+
+        .navbar-start {
+            justify-content: space-around;
+            flex-grow: 1;
+            margin-inline-end: 0;
+        }
+    }
+
+    .header-title {
+        display: flex;
+        justify-content: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        h1 {
+            font-size: 5rem;
+        }
+    }
+}
+.footer {
+    margin-top: auto;
+    font-family: "Roboto";
+}

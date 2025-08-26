@@ -19,8 +19,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "bulma/bulma";`,
+        // additionalData: `@import "bulma/bulma";`,
       },
     },
-  },
+  }
 });
