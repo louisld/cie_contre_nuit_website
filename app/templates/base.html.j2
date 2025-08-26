@@ -16,17 +16,39 @@
     {% endfor %}
 </head>
 <body>
-    <h1>Compagnie à Contre-nuit</h1>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('main.index') }}">Accueil</a></li>
-            <li>La Compagnie</li>
-            <li><a href="{{ url_for('main.spectacles') }}">Spectacles</a></li>
-            <li>Contact</li>
-        </ul>
-    </nav>
+    <header class="header">
+        <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a href="{{ url_for('main.index') }}" class="navbar-item">
+                    <img src="{{ url_for('static', filename='img/logo_cie_contre_nuit_blanc.png') }}" alt="Logo Compagnie a Contre-Nuit">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-start">
+                    <a href="#" class="navbar-item">La Compagnie</a>
+                    <a href="#" class="navbar-item">Nos Projets</a>
+                    <a href="#" class="navbar-item">Contacts</a>
+                </div>
+            </div>
+        </nav>
+        <div class="header-title">
+            <h1>{% block header_title %}{% endblock %}</h1>
+            {% block header_img %}{% endblock %}
+        </div>
+    </header>
 
     {% block content %}{% endblock %}
+
+    <footer class="footer has-text-centered">
+        <p>Site internet réalisé par Anna Raffault et Louis Grandvaux</p>
+        <p>© 2025 COMPAGNIE À CONTRE-NUIT</p>
+    </footer>
 
     {# PROD JS #}
     <script type="module" src="{{ vite_asset('main.js').js }}"></script>

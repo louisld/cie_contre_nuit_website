@@ -5,7 +5,7 @@ from flask import current_app, url_for
 
 
 def load_manifest():
-    path = os.path.join(current_app.root_path, current_app.config['STATIC_DIR'], 'manifest.json')
+    path = os.path.join(current_app.root_path, current_app.config['STATIC_DIR'], '.vite', 'manifest.json')
     with open(path) as f:
         return json.load(f)
 
