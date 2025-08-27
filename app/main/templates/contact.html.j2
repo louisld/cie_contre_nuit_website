@@ -1,0 +1,39 @@
+{% extends "base.html.j2"%}
+
+{% block title %}
+    Compagnie à Contre-Nuit - Contacts
+{% endblock %}
+
+{% block header_title %}
+    <img src="{{ url_for('static', filename='main/contact/title_contact.png') }}" alt="Contact">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="fixed-grid has-2-cols">
+            <div class="grid">
+                <div class="contact-logo">
+                    <img src="{{ url_for('static', filename='img/logo_cie_contre_nuit_noir.png') }}" alt="Logo Cie À Contre-Nuit">
+                </div>
+                <section class="section contact-infos">
+                    <h3 class="is-size-3">Téléphone</h3>
+
+                    <p>+33 0 00 00 00 00</p>
+
+                    <h3 class="is-size-3">Mail</h3>
+
+                    <p>contact.acontrenuit@gmail.com</p>
+
+                    <h3 class="is-size-3 mt-6">Réseaux</h3>
+
+                    <div class="contact-network pt-4 is-flex is-flex-direction-column">
+                        <div class="contact-network-item is-flex is-align-items-center">
+                            <div><a href="https://instagram.com/cie_acontrenuit"><i class="fab fa-square-instagram has-text-black is-size-1"></i></a></div>
+                            <div class="">@cie_acontrenuit</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}

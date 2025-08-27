@@ -13,3 +13,7 @@ def troupe():
 @main.route('/nos-projets')
 def projects():
     return render_template("projects.html.j2")
+
+@main.route('/contact')
+def contact():
+    return render_template("contact.html.j2")
