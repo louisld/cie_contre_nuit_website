@@ -1,0 +1,64 @@
+{% extends "base.html.j2"%}
+
+{% block title %}
+    Compagnie à Contre-Nuit - Nos projets
+{% endblock %}
+
+{% block header_title %}
+    <img src="{{ url_for('static', filename='main/projects/title_projects.png') }}" alt="La Compagnie">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {# Current #}
+        <section class="section">
+            <h2 class="mb-6"><img src="{{ url_for('static', filename='main/projects/ongoing.png') }}" alt="L'Équipe" class="is-size-2-img"></h2>
+
+            <div class="fixed-grid has-1-cols">
+                <div class="grid">
+                    {% for i in range (2) %}
+                        <div class="card card-horizontal">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="En cours de création">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <div class="project-name mb-2"><img class="is-size-4-img" src="{{ url_for('static', filename='main/projects/entre_eux_deux.png') }}" alt="Entre eux deux"></div>
+                                    <div class="project-desc has-text-justified mb-2">Netus nunc litora torquent luctus tellus elementum, bibendum nisl dolor tempus dolor orci tristique cum, mi cubilia venenatis. Placerat hac fames habitasse aliquam, quis fusce montes feugiat lectus sociosqu nostra, class penatibus orci fames eu, commodo parturient.</div>
+                                    <div class="project-date">2025-2026</div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {# Archives #}
+         <section class="section">
+            <h2 class="mb-6"><img src="{{ url_for('static', filename='main/projects/archives.png') }}" alt="Projects" class="is-size-2-img"></h2>
+
+            <div class="fixed-grid has-1-cols">
+                <div class="grid">
+                    {% for i in range (2) %}
+                        <div class="card card-horizontal">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    <div class="project-name mb-2"><img class="is-size-4-img" src="{{ url_for('static', filename='main/projects/entre_eux_deux.png') }}" alt="Entre eux deux"></div>
+                                    <div class="project-desc has-text-justified mb-2">Netus nunc litora torquent luctus tellus elementum, bibendum nisl dolor tempus dolor orci tristique cum, mi cubilia venenatis. Placerat hac fames habitasse aliquam, quis fusce montes feugiat lectus sociosqu nostra, class penatibus orci fames eu, commodo parturient.</div>
+                                    <div class="project-date">2025-2026</div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

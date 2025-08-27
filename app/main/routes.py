@@ -10,6 +10,6 @@ def index():
 def troupe():
     return render_template("troupe.html.j2")
 
-@main.route('/spectacles')
-def spectacles():
-    return render_template("spectacles.html.j2")
+@main.route('/nos-projets')
+def projects():
+    return render_template("projects.html.j2")
