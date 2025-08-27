@@ -16,13 +16,17 @@ html, body {
     font-family: "Roboto";
     background-color: black;
     color: white;
+    height: 100vh;
 
     .navbar {
         font-size: 3rem;
 
-        .navbar-brand img {
-            height: 5rem;
-            max-height: none;
+        .navbar-brand {
+            margin-right: 15vw;
+            img {
+                height: 5rem;
+                max-height: none;
+            }
         }
 
         .navbar-start {
@@ -37,13 +41,25 @@ html, body {
         justify-content: center;
         padding-top: 3rem;
         padding-bottom: 3rem;
+        margin-top: 20vh;
 
         h1 {
             font-size: 5rem;
         }
     }
 }
+.main-content {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 .footer {
     margin-top: auto;
     font-family: "Roboto";
+}
+// Index
+.card-project-index {
+    padding: 1rem;
+    .card-content{
+        border: 1px solid black;
+    }
 }

@@ -6,6 +6,10 @@ from ..main import main
 def index():
     return render_template("index.html.j2")
 
+@main.route('/la-compagnie')
+def troupe():
+    return render_template("troupe.html.j2")
+
 @main.route('/spectacles')
 def spectacles():
     return render_template("spectacles.html.j2")
