@@ -2,9 +2,16 @@ from flask import render_template
 
 from ..main import main
 
+from app.main.models import Project
+
 @main.route('/')
 def index():
-    return render_template("index.html.j2")
+    projects = Project.query.all()
+
+    return render_template(
+        "index.html.j2",
+        projects=projects
+    )
 
 @main.route('/la-compagnie')
 def troupe():

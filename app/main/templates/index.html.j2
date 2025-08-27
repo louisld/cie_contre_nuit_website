@@ -12,7 +12,7 @@
     <div class="container">
         <div class="fixed-grid has-2-cols has-1-cols-mobile">
             <div class="grid is-gap-8">
-                {# Arlequin#}
+                {% for p in projects %}
                 <div class="card card-project-index">
                     <div class="card-image">
                         <figure class="image is-4-by-3">
@@ -21,26 +21,12 @@
                     </div>
                     <div class="card-content">
                         <div class="content">
-                            <h3>Arlequin poli par l'amour</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed... <a href="#">En savoir plus.</a></p>
+                            <h3><img class="is-size-2-img" src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_title.png') }}" alt="{{ p.short_title }}"></h3>
+                            <p>{{ p.short_description }}<a href="#">En savoir plus.</a></p>
                         </div>
                     </div>
                 </div>
-
-                {# Entre eux deux#}
-                <div class="card card-project-index">
-                    <div class="card-image">
-                        <figure class="image is-4-by-3">
-                            <img src="{{ url_for('static', filename='img/cover.png') }}" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="content">
-                            <h3>Entre eux deux</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed... <a href="#">En savoir plus.</a></p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
