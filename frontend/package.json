@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "packageManager": "yarn@4.9.3",
+  "packageManager": "yarn@4.9.4",
   "dependencies": {
     "bulma": "^1.0.4",
     "sass": "^1.90.0",
