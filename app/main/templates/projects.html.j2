@@ -21,7 +21,9 @@
                         <div class="card card-horizontal">
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="En cours de création">
+                                    <object data="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_cover.jpg') }}" type="image/jpeg">
+                                        <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="Pas d'image">
+                                    </object>
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -48,7 +50,9 @@
                         <div class="card card-horizontal">
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="En cours de création">
+                                    <object data="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_cover.jpg') }}" type="image/jpeg">
+                                        <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="Pas d'image">
+                                    </object>
                                 </figure>
                             </div>
                             <div class="card-content">
