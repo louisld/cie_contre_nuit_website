@@ -16,7 +16,8 @@
 
             <div class="fixed-grid has-1-cols">
                 <div class="grid">
-                    {% for i in range (2) %}
+                    {% for p in projects %}
+                    {% if p.active %}
                         <div class="card card-horizontal">
                             <div class="card-image">
                                 <figure class="image">
@@ -25,12 +26,13 @@
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <div class="project-name mb-2"><img class="is-size-4-img" src="{{ url_for('static', filename='main/projects/entre_eux_deux.png') }}" alt="Entre eux deux"></div>
-                                    <div class="project-desc has-text-justified mb-2">Netus nunc litora torquent luctus tellus elementum, bibendum nisl dolor tempus dolor orci tristique cum, mi cubilia venenatis. Placerat hac fames habitasse aliquam, quis fusce montes feugiat lectus sociosqu nostra, class penatibus orci fames eu, commodo parturient.</div>
-                                    <div class="project-date">2025-2026</div>
+                                    <div class="project-name mb-2"><img class="is-size-2-img" src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_title.png') }}" alt="{{ p.short_title }}"></div>
+                                    <div class="project-desc has-text-justified mb-2">{{ p.short_description }}</div>
+                                    <div class="project-date"></div>
                                 </div>
                             </div>
                         </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -41,21 +43,23 @@
 
             <div class="fixed-grid has-1-cols">
                 <div class="grid">
-                    {% for i in range (2) %}
+                    {% for p in projects %}
+                    {% if not p.active %}
                         <div class="card card-horizontal">
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="">
+                                    <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="En cours de création">
                                 </figure>
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <div class="project-name mb-2"><img class="is-size-4-img" src="{{ url_for('static', filename='main/projects/entre_eux_deux.png') }}" alt="Entre eux deux"></div>
-                                    <div class="project-desc has-text-justified mb-2">Netus nunc litora torquent luctus tellus elementum, bibendum nisl dolor tempus dolor orci tristique cum, mi cubilia venenatis. Placerat hac fames habitasse aliquam, quis fusce montes feugiat lectus sociosqu nostra, class penatibus orci fames eu, commodo parturient.</div>
-                                    <div class="project-date">2025-2026</div>
+                                    <div class="project-name mb-2"><img class="is-size-2-img" src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_title.png') }}" alt="{{ p.short_title }}"></div>
+                                    <div class="project-desc has-text-justified mb-2">{{ p.short_description }}</div>
+                                    <div class="project-date"></div>
                                 </div>
                             </div>
                         </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>

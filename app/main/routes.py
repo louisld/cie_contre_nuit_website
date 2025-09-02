@@ -19,7 +19,12 @@ def troupe():
 
 @main.route('/nos-projets')
 def projects():
-    return render_template("projects.html.j2")
+    projects = Project.query.all()
+
+    return render_template(
+        "projects.html.j2",
+        projects=projects
+    )
 
 @main.route('/contact')
 def contact():
