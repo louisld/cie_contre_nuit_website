@@ -2,7 +2,7 @@ from flask import render_template
 
 from ..main import main
 
-from app.main.models import Project
+from app.main.models import Member, Project
 
 @main.route('/')
 def index():
@@ -15,7 +15,12 @@ def index():
 
 @main.route('/la-compagnie')
 def troupe():
-    return render_template("troupe.html.j2")
+    members = Member.query.all()
+    
+    return render_template(
+        "troupe.html.j2",
+        members=members
+    )
 
 @main.route('/nos-projets')
 def projects():

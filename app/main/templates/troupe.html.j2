@@ -21,17 +21,19 @@
 
             <div class="fixed-grid has-3-cols has-2-cols-mobile">
                 <div class="grid is-gap-4">
-                    {% for i in range (11) %}
+                    {% for m in members %}
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4-by-3">
-                                    <img src="{{ url_for('static', filename='img/cover.png') }}" alt="">
+                                    <object data="{{ url_for('static', filename='img/uploads/{{ m.id }}_cover.png') }}" type="image/png">
+                                        <img src="{{ url_for('static', filename='img/cover.png') }}" alt="Pas d'image de profil">
+                                    </object>
                                 </figure>
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <div class="troupe-name"><img src="{{ url_for('static', filename='main/troupe/Pierre.png') }}" alt="Pierre"></div>
-                                    <div class="troupe-role has-text-centered">Metteur en scène</div>
+                                    <div class="troupe-name has-text-centered"><img class="is-size-2-img" src="{{ url_for('static', filename='main/troupe/uploads/' + m.id|string + '_name.png') }}" alt="{{ m.first_name }} {{ m.last_name }}"></div>
+                                    <div class="troupe-role has-text-centered">{{ m.role }}</div>
                                 </div>
                             </div>
                         </div>
