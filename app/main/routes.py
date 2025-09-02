@@ -1,8 +1,10 @@
+import json
+
 from flask import render_template
 
 from ..main import main
 
-from app.main.models import Member, Project
+from app.main.models import Info, Member, Project
 
 @main.route('/')
 def index():
@@ -16,7 +18,7 @@ def index():
 @main.route('/la-compagnie')
 def troupe():
     members = Member.query.all()
-    
+
     return render_template(
         "troupe.html.j2",
         members=members
@@ -33,4 +35,8 @@ def projects():
 
 @main.route('/contact')
 def contact():
-    return render_template("contact.html.j2")
+
+    return render_template(
+        "contact.html.j2",
+        info = Info()
+    )

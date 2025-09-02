@@ -1,4 +1,8 @@
+import json
+import pathlib
 from typing import override
+
+from flask import current_app
 import sqlalchemy as sa
 from sqlalchemy.orm import (
     Mapped,
@@ -30,3 +34,38 @@ class Member(db.Model):
     @override
     def __repr__(self) -> str:
         return f"<Member #{self.id} - {self.first_name} {self.last_name}>"
+
+
+class Network:
+    logo: str | None = None
+    text: str | None = None
+
+    def __init__(self, logo: str, text: str) -> None:
+        self.logo = logo
+        self.text = text
+
+
+class Info:
+    file_path= pathlib.Path(__file__).parent.parent / pathlib.Path("static/main/contact/uploads/info.json")
+
+    phone: str | None = None
+    email: str | None = None
+    networks: list[type[Network]] = []
+
+    def __init__(self, file_path: str | None=None) -> None:
+        if file_path is not None:
+            self.file_path = pathlib.Path(__file__).parent.parent / pathlib.Path(file_path)
+
+        with open(self.file_path, 'r') as f:
+            data = json.load(f)
+            self.phone = data["phone"] if "phone" in data else None
+            self.email = data["email"] if "email" in data else None
+
+            if "networks" in data:
+                for n in data["networks"]:
+                    print(n)
+                    try:
+                        nt = Network(n["logo"], n["text"])
+                        self.networks.append(nt)
+                    except:
+                        continue

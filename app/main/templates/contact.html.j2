@@ -18,19 +18,21 @@
                 <section class="section contact-infos">
                     <h3 class="is-size-3">Téléphone</h3>
 
-                    <p>+33 0 00 00 00 00</p>
+                    <p>{{ info.phone }}</p>
 
-                    <h3 class="is-size-3">Mail</h3>
+                    <h3 class="is-size-3">Courriel</h3>
 
-                    <p>contact.acontrenuit@gmail.com</p>
+                    <p>{{ info.email }}</p>
 
                     <h3 class="is-size-3 mt-6">Réseaux</h3>
 
                     <div class="contact-network pt-4 is-flex is-flex-direction-column">
-                        <div class="contact-network-item is-flex is-align-items-center">
-                            <div><a href="https://instagram.com/cie_acontrenuit"><i class="fab fa-square-instagram has-text-black is-size-1"></i></a></div>
-                            <div class="">@cie_acontrenuit</div>
-                        </div>
+                        {% for n in info.networks %}
+                            <div class="contact-network-item is-flex is-align-items-center">
+                                <div><a href="https://instagram.com/cie_acontrenuit"><i class="{{ n.logo }} has-text-black is-size-1"></i></a></div>
+                                <div class="">{{ n.text }}</div>
+                            </div>
+                        {% endfor %}
                     </div>
                 </section>
             </div>
