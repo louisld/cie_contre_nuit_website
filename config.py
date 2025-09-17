@@ -3,7 +3,7 @@ import os
 class BaseConfig():
     SECRET_KEY = os.getenv("SECRET_KEY")
     STATIC_DIR = "static/assets"
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
 
 class DevelopmentConfig(BaseConfig):
     DEBUG=True
