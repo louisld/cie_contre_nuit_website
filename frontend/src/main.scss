@@ -11,7 +11,7 @@
     filter: invert(1);
 }
 .is-size-2-img {
-    height: 2.5rem;
+    height: 4rem;
 }
 .is-size-4-img {
     height: 2.5rem;
@@ -37,6 +37,11 @@
             width: 60%;
         }
     }
+}
+.link {
+    color: black;
+    text-decoration: underline;
+    font-style: italic;
 }
 // Sticky footer
 html,
@@ -105,6 +110,19 @@ body {
 
     .card-content {
         border: 1px solid black;
+        height: 16rem;
+        display: flex;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .card-description {
+                flex-grow: 2;
+            }
+        }
+        
     }
 }
 
