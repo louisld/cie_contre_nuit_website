@@ -50,7 +50,7 @@ body {
 .header {
     background-color: black;
     color: white;
-    height: 100vh;
+    min-height: 100vh;
 
     .navbar {
         font-size: 3rem;
@@ -75,24 +75,17 @@ body {
         display: flex;
         justify-content: center;
         padding-top: 3rem;
-        padding-bottom: 3rem;
-        margin-top: 10vh;
+        margin-top: 2vh;
 
         h1 {
             font-size: 5rem;
+            line-height: 0;
 
             img {
-                max-width: 100%;
+                width: 100%;
             }
         }
 
-        @include mixins.tablet {
-            margin-top: 17vh;
-            
-            h1 img {
-                max-height: 20vh;
-            }
-        }
     }
 }
 
