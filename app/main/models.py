@@ -16,7 +16,7 @@ class Project(db.Model):
 
     id: Mapped[int] = mapped_column(sa.Integer(), primary_key=True)
     short_title: Mapped[str] = mapped_column(sa.String(64), nullable=False, unique=True)
-    short_description: Mapped[str] = mapped_column(sa.String(255), nullable=True)
+    short_description: Mapped[str] = mapped_column(sa.String(1000), nullable=True)
     active: Mapped[bool] = mapped_column(sa.Boolean(), nullable=False, default=False)
 
     @override
