@@ -16,14 +16,19 @@
                     <img src="{{ url_for('static', filename='img/logo_cie_contre_nuit_noir.png') }}" alt="Logo Cie À Contre-Nuit">
                 </div>
                 <section class="section contact-infos">
+                    {% if info.phone %}
                     <h3 class="is-size-3">Téléphone</h3>
 
                     <p>{{ info.phone }}</p>
+                    {% endif %}
 
+                    {% if info.email %}
                     <h3 class="is-size-3">Courriel</h3>
 
                     <p>{{ info.email }}</p>
+                    {% endif %}
 
+                    {% if info.networks|length > 0 %}
                     <h3 class="is-size-3 mt-6">Réseaux</h3>
 
                     <div class="contact-network pt-4 is-flex is-flex-direction-column">
@@ -34,6 +39,7 @@
                             </div>
                         {% endfor %}
                     </div>
+                    {% endif %}
                 </section>
             </div>
         </div>
