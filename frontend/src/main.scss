@@ -59,6 +59,15 @@ body {
 
     .navbar {
         font-size: 3rem;
+        background-color: black;
+
+        .navbar-menu {
+            background-color: black;
+        }
+
+        a.navbar-item {
+            background-color: black;
+        }
 
         .navbar-brand {
             margin-right: 15vw;
@@ -90,7 +99,11 @@ body {
                 width: 100%;
             }
         }
-
+    }
+    .header-title.header-title-contact h1 img {
+        position: absolute;
+        left: 0;
+        bottom: 0;
     }
 }
 
@@ -110,8 +123,18 @@ body {
 
     .card-content {
         border: 1px solid black;
-        height: 16rem;
         display: flex;
+        
+        // Tricky, can be better
+        @include mixins.widescreen {
+            height: 16rem;
+        }
+        @include mixins.tablet-only {
+            height: 22rem;
+        }
+        @include mixins.desktop-only {
+            height: 20rem;
+        }
 
         .content {
             display: flex;

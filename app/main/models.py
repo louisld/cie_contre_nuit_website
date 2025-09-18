@@ -48,11 +48,12 @@ class Network:
 class Info:
     file_path= pathlib.Path(__file__).parent.parent / pathlib.Path("static/main/contact/uploads/info.json")
 
-    phone: str | None = None
-    email: str | None = None
-    networks: list[type[Network]] = []
-
     def __init__(self, file_path: str | None=None) -> None:
+
+        self.phone: str | None = None
+        self.email: str | None = None
+        self.networks: list[type[Network]] = []
+        
         if file_path is not None:
             self.file_path = pathlib.Path(__file__).parent.parent / pathlib.Path(file_path)
 

@@ -29,7 +29,7 @@
                             <div class="card-content">
                                 <div class="content">
                                     <div class="project-name mb-2"><img class="is-size-2-img" src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_title.png') }}" alt="{{ p.short_title }}"></div>
-                                    <div class="project-desc has-text-justified mb-2">{{ p.short_description }}</div>
+                                    <div class="project-desc has-text-justified mb-2">{{ p.short_description | truncate(300) }}</div>
                                     <div class="project-date"></div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                             <div class="card-content">
                                 <div class="content">
                                     <div class="project-name mb-2"><img class="is-size-2-img" src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_title.png') }}" alt="{{ p.short_title }}"></div>
-                                    <div class="project-desc has-text-justified mb-2">{{ p.short_description }}</div>
+                                    <div class="project-desc has-text-justified mb-2">{{ p.short_description | truncate(300) }}</div>
                                     <div class="project-date"></div>
                                 </div>
                             </div>
