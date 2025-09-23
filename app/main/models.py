@@ -1,3 +1,4 @@
+import datetime
 import json
 import pathlib
 from typing import override
@@ -18,6 +19,10 @@ class Project(db.Model):
     short_title: Mapped[str] = mapped_column(sa.String(64), nullable=False, unique=True)
     short_description: Mapped[str] = mapped_column(sa.String(1000), nullable=True)
     active: Mapped[bool] = mapped_column(sa.Boolean(), nullable=False, default=False)
+
+    is_future :Mapped[bool] = mapped_column(sa.Boolean(), nullable=False, default=True)
+    start_date: Mapped[datetime.date] = mapped_column(sa.Date(), nullable=True)
+    end_date: Mapped[datetime.date] = mapped_column(sa.Date(), nullable=True)
 
     @override
     def __repr__(self) -> str:

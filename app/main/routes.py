@@ -8,7 +8,7 @@ from app.main.models import Info, Member, Project
 
 @main.route('/')
 def index():
-    projects = Project.query.all()
+    projects = Project.query.order_by(Project.is_future.desc(), Project.start_date.desc()).all()
 
     return render_template(
         "index.html.j2",
@@ -26,7 +26,7 @@ def troupe():
 
 @main.route('/nos-projets')
 def projects():
-    projects = Project.query.all()
+    projects = Project.query.order_by(Project.is_future.desc(), Project.start_date.desc()).all()
 
     return render_template(
         "projects.html.j2",
