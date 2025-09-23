@@ -25,9 +25,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4-by-3">
-                                    <object data="{{ url_for('static', filename='img/uploads/{{ m.id }}_cover.png') }}" type="image/png">
-                                        <img src="{{ url_for('static', filename='img/cover.png') }}" alt="Pas d'image de profil">
-                                    </object>
+                                    <img src="{{ url_for('static', filename='main/troupe/uploads/' + m.id|string + '_cover.png') }}" onerror="this.src='{{ url_for('static', filename='main/troupe/cover.png') }}'" alt="Pas d'image de profil">
                                 </figure>
                             </div>
                             <div class="card-content">
