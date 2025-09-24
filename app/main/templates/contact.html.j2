@@ -41,6 +41,17 @@
                         {% endfor %}
                     </div>
                     {% endif %}
+                    {% if info.credits|length > 0 %}
+                    <h3 class="is-size-3 mt-6">Crédits</h3>
+
+                    <div class="contact-credits pt-4 is-flex is-flex-direction-column">
+                        <ul class="list">
+                            {% for c in info.credits %}
+                                    <li class="list-item">{{ c.text }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
                 </section>
             </div>
         </div>

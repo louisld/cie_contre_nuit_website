@@ -49,6 +49,12 @@ class Network:
         self.logo = logo
         self.text = text
 
+class Credits:
+    text: str | None = None
+
+    def __init__(self, text: str) -> None:
+        self.text = text
+
 
 class Info:
     file_path= pathlib.Path(__file__).parent.parent / pathlib.Path("static/main/contact/uploads/info.json")
@@ -58,6 +64,7 @@ class Info:
         self.phone: str | None = None
         self.email: str | None = None
         self.networks: list[type[Network]] = []
+        self.credits: list[type[Credits]] = []
         
         if file_path is not None:
             self.file_path = pathlib.Path(__file__).parent.parent / pathlib.Path(file_path)
@@ -69,9 +76,15 @@ class Info:
 
             if "networks" in data:
                 for n in data["networks"]:
-                    print(n)
                     try:
                         nt = Network(n["logo"], n["text"])
                         self.networks.append(nt)
+                    except:
+                        continue
+            if "credits" in data:
+                for c in data['credits']:
+                    try:
+                        cr = Credits(c["text"])
+                        self.credits.append(cr)
                     except:
                         continue
