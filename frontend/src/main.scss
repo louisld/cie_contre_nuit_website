@@ -11,6 +11,10 @@ ul {
     list-style: disc;
     margin-left: 1.5rem;
 }
+a {
+    color: black;
+    font-weight: bold;
+}
 
 // General
 .inverted-image {
@@ -52,7 +56,6 @@ ul {
         }
     }
 }
-
 .link {
     color: black;
     text-decoration: underline;
