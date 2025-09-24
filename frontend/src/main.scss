@@ -10,39 +10,49 @@
 .inverted-image {
     filter: invert(1);
 }
+
 .is-size-2-img {
     height: 4rem;
 }
+
 .is-size-4-img {
     height: 2.5rem;
 }
+
 .card-horizontal {
     .card-image figure {
         aspect-ratio: 5/3;
     }
+
     @include mixins.tablet {
         display: flex;
+
         .card-image {
             width: 40%;
+
             figure {
                 @include mixins.until-widescreen {
                     aspect-ratio: 4/3;
+
                     img {
                         height: 100%;
                     }
                 }
             }
         }
+
         .card-content {
             width: 60%;
         }
     }
 }
+
 .link {
     color: black;
     text-decoration: underline;
     font-style: italic;
 }
+
 // Sticky footer
 html,
 body {
@@ -55,11 +65,16 @@ body {
 .header {
     background-color: black;
     color: white;
-    min-height: 100vh;
+    height: 70vh;
+
+    @include mixins.tablet {
+        height: 100vh;
+    }
 
     .navbar {
         font-size: 3rem;
         background-color: black;
+        height: 20%;
 
         .navbar-menu {
             background-color: black;
@@ -67,14 +82,17 @@ body {
 
         a.navbar-item {
             background-color: black;
+
+            img {
+                max-height: 6rem;
+            }
         }
 
         .navbar-brand {
-            margin-right: 15vw;
+            flex-grow: 1;
 
             img {
-                height: 5rem;
-                max-height: none;
+                max-height: 6rem;
             }
         }
 
@@ -90,20 +108,26 @@ body {
         justify-content: center;
         padding-top: 3rem;
         margin-top: 2vh;
+        height: 78%;
+        position: relative;
 
         h1 {
             font-size: 5rem;
             line-height: 0;
+            height: 100%;
 
             img {
-                width: 100%;
+                max-height: 100%;
+                width: auto;
             }
         }
     }
+
     .header-title.header-title-contact h1 img {
         position: absolute;
         left: 0;
         bottom: 0;
+        width: 100%
     }
 }
 
@@ -124,14 +148,16 @@ body {
     .card-content {
         border: 1px solid black;
         display: flex;
-        
+
         // Tricky, can be better
         @include mixins.widescreen {
             height: 16rem;
         }
+
         @include mixins.tablet-only {
             height: 22rem;
         }
+
         @include mixins.desktop-only {
             height: 20rem;
         }
@@ -145,7 +171,7 @@ body {
                 flex-grow: 2;
             }
         }
-        
+
     }
 }
 

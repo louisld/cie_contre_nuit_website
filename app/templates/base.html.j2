@@ -20,7 +20,7 @@
         <nav class="navbar is-black" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a href="{{ url_for('main.index') }}" class="navbar-item">
-                    <img src="{{ url_for('static', filename='img/logo_cie_contre_nuit_blanc.png') }}" alt="Logo Compagnie a Contre-Nuit">
+                    <img src="{{ url_for('static', filename='img/logo_cie_contre_nuit_rond_blanc.png') }}" alt="Logo Compagnie a Contre-Nuit">
                 </a>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                     <span aria-hidden="true"></span>
@@ -31,9 +31,9 @@
             </div>
             <div class="navbar-menu" id="navMenu">
                 <div class="navbar-start">
-                    <a href="{{ url_for('main.troupe') }}" class="navbar-item">La Compagnie</a>
-                    <a href="{{ url_for('main.projects') }}" class="navbar-item">Nos Projets</a>
-                    <a href="{{ url_for('main.contact') }}" class="navbar-item">Contacts</a>
+                    <a href="{{ url_for('main.troupe') }}" class="navbar-item"><img src="{{ url_for('static', filename='img/menu_troupe.png') }}" alt="La compagnie"></a>
+                    <a href="{{ url_for('main.projects') }}" class="navbar-item"><img src="{{ url_for('static', filename='img/menu_project.png') }}" alt="Nos projets"></a>
+                    <a href="{{ url_for('main.contact') }}" class="navbar-item"><img src="{{ url_for('static', filename='img/menu_contact.png') }}" alt="Contact"></a>
                 </div>
             </div>
         </nav>
