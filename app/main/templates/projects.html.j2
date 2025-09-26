@@ -41,6 +41,7 @@
                                         {% endif %}
                                     </div>
                                     <div class="project-desc has-text-justified mb-2">{{ p.short_description | truncate(300) }}</div>
+                                    <div class="has-text-right"><a class="link" href="{{ url_for('main.play', short_title=p.short_title) }}">En savoir plus.</a></div>
                                 </div>
                             </div>
                         </div>
@@ -80,6 +81,7 @@
                                         {% endif %}
                                     </div>
                                     <div class="project-desc has-text-justified mb-2">{{ p.short_description | truncate(300) }}</div>
+                                    <div class="has-text-right"><a class="link" href="{{ url_for('main.play', short_title=p.short_title) }}">En savoir plus.</a></div>
                                 </div>
                             </div>
                         </div>
