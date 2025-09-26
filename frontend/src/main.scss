@@ -11,6 +11,7 @@ ul {
     list-style: disc;
     margin-left: 1.5rem;
 }
+
 a {
     color: black;
     font-weight: bold;
@@ -56,6 +57,7 @@ a {
         }
     }
 }
+
 .link {
     color: black;
     text-decoration: underline;
@@ -74,11 +76,7 @@ body {
 .header {
     background-color: black;
     color: white;
-    height: 70vh;
-
-    @include mixins.tablet {
-        height: 100vh;
-    }
+    height: 100vh;
 
     .navbar {
         font-size: 3rem;
@@ -91,25 +89,30 @@ body {
 
         .navbar-start a.navbar-item {
             background-color: black;
+            margin-right: 3rem;
+            margin-left: 3rem;
 
             img {
-                height: 75%;
-                max-height: 4rem;
+                height: 85%;
+                max-height: 8rem;
             }
         }
 
         .navbar-brand {
             flex-grow: 1;
+            @include mixins.desktop{
+                flex-shrink: 1;
+            }
 
             img {
-                height: 100%;
-                max-height: 6rem;
+                height: 95%;
+                max-height: 8rem;
             }
         }
 
         .navbar-start {
             justify-content: space-around;
-            flex-grow: 1;
+            flex-grow: 3;
             margin-inline-end: 0;
         }
     }
@@ -185,6 +188,7 @@ body {
 .contact-logo img {
     max-height: 30rem;
 }
+
 .contact-infos {
     padding-top: 0;
 }
