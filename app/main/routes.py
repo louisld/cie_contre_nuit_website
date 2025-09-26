@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+import flask
 from flask import render_template
 
 from markdown import markdown
@@ -50,3 +51,16 @@ def contact():
         "contact.html.j2",
         info = Info()
     )
+
+@main.route('/piece/<string:short_title>')
+def play(short_title: str):
+    project: Project | None = Project.query.filter_by(short_title=short_title).first()
+
+    if project is None:
+        return flask.abort(404, description="Le projet n'existe pas.")
+
+    return render_template(
+        "play.html.j2",
+        project = project
+    )
+

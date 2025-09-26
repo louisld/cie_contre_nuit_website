@@ -1,0 +1,15 @@
+{% extends "base.html.j2"%}
+
+{% block title %}
+    Compagnie à Contre-Nuit - {{ project.short_title }}
+{% endblock %}
+
+{% block header_title %}
+    <img src="{{ url_for('static', filename='main/projects/banner_projects.png') }}" alt="La Compagnie">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>{{ project.short_title }}</h2>
+    </div>
+{% endblock %}
