@@ -5,11 +5,18 @@
 {% endblock %}
 
 {% block header_title %}
-    <img src="{{ url_for('static', filename='main/projects/banner_projects.png') }}" alt="La Compagnie">
+    <img src="{{ url_for('static', filename='main/projects/uploads/' + project.id|string + '_banner.png') }}" alt="{{ project.short_title }}">
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h2>{{ project.short_title }}</h2>
+    <div class="container mt-6 mb-6">
+        <div class="fixed-grid has-2-cols has-1-cols-mobile play-poster">
+            <div class="grid is-gap-0">
+                <img src="{{ url_for('static', filename='main/projects/uploads/' + project.id|string + '_poster.png') }}" alt="{{ project.short_title }} poster">
+                <div class="play-poster-desc p-4 markdown">
+                    {{ project.poster_desc|markdown }}    
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

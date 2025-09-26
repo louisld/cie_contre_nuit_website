@@ -63,6 +63,22 @@ a {
     text-decoration: underline;
     font-style: italic;
 }
+.markdown {
+    h1 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 0.8em;
+    }
+    h2 {
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-bottom: 0.8em;
+    }
+    p {
+        margin: 0.5em 0 0.5em 0;
+        text-align: justify;
+    }
+}
 
 // Sticky footer
 html,
@@ -191,4 +207,24 @@ body {
 
 .contact-infos {
     padding-top: 0;
+}
+// Play
+.play-poster {
+    width: 100%;
+
+    @include mixins.desktop {
+        width: 80%;
+        margin: auto;
+    }
+
+    img {
+        margin-left: auto;
+        height: 90vh;
+        border: black 1px solid;
+    }
+
+    .play-poster-desc {
+        border: black 1px solid;
+        border-left: none;
+    }
 }

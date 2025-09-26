@@ -10,6 +10,10 @@ from ..main import main
 from app.main.models import Info, Member, Project
 
 TROUPE_DESCRIPTION_PATH = Path("app/static/main/troupe/uploads/description.md")
+PLAY_POSTER_DESC = {
+    "path": Path("app/static/main/project/uploads/"),
+    "filename": "_poster_desc.md"
+}
 
 @main.route('/')
 def index():

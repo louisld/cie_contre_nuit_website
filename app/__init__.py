@@ -7,8 +7,9 @@ from flask import Flask
 from config import BaseConfig, config_by_name
 
 from app.extensions import db, migrate
-from app.main import main
+from app.filters import register_filters
 from app.helpers.vite import vite_asset
+from app.main import main
 
 def create_app():
     app = Flask(__name__)
@@ -17,6 +18,7 @@ def create_app():
     define_blueprints(app)
     register_extensions(app)
     configure_jinja(app)
+    register_filters(app)
 
     return app
 

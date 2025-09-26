@@ -17,8 +17,12 @@ class Project(db.Model):
 
     id: Mapped[int] = mapped_column(sa.Integer(), primary_key=True)
     short_title: Mapped[str] = mapped_column(sa.String(64), nullable=False, unique=True)
+    full_title: Mapped[str] = mapped_column(sa.String(255), nullable=False, default="Unknown")
     short_description: Mapped[str] = mapped_column(sa.String(1000), nullable=True)
     active: Mapped[bool] = mapped_column(sa.Boolean(), nullable=False, default=False)
+    poster_desc: Mapped[str] = mapped_column(sa.Text(), nullable=True)
+    video_link: Mapped[str] = mapped_column(sa.String(1024), nullable=True)
+    distribution_text: Mapped[str] = mapped_column(sa.Text(), nullable=True)
 
     is_future :Mapped[bool] = mapped_column(sa.Boolean(), nullable=False, default=True)
     start_date: Mapped[datetime.date] = mapped_column(sa.Date(), nullable=True)

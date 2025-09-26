@@ -25,7 +25,7 @@
                         <div class="content">
                             <h3><img class="is-size-2-img" src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_title.png') }}" alt="{{ p.short_title }}"></h3>
                             <p class="card-description">{{ p.short_description | truncate(300) }}</p>
-                            <p class="has-text-right"><a class="link" href="#">En savoir plus</a></p>
+                            <p class="has-text-right"><a class="link" href="{{ url_for('main.play', short_title=p.short_title) }}">En savoir plus</a></p>
                         </div>
                     </div>
                 </div>
