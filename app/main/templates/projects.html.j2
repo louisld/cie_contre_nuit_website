@@ -20,10 +20,8 @@
                     {% if p.active %}
                         <div class="card card-horizontal">
                             <div class="card-image">
-                                <figure class="image">
-                                    <object data="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_cover.jpg') }}" type="image/jpeg">
-                                        <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="Pas d'image">
-                                    </object>
+                                <figure class="image is-4by3">
+                                    <img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_cover.jpg') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Couverture de {{ p.full_title }}">
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -60,10 +58,8 @@
                     {% if not p.active %}
                         <div class="card card-horizontal">
                             <div class="card-image">
-                                <figure class="image">
-                                    <object data="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_cover.jpg') }}" type="image/jpeg">
-                                        <img src="{{ url_for('static', filename='img/cover_large.png') }}" alt="Pas d'image">
-                                    </object>
+                                <figure class="image is-4by3">
+                                    <img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_cover.jpg') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Couverture de {{ p.full_title }}">
                                 </figure>
                             </div>
                             <div class="card-content">

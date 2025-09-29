@@ -31,9 +31,6 @@ a {
 }
 
 .card-horizontal {
-    .card-image figure {
-        aspect-ratio: 5/3;
-    }
 
     @include mixins.tablet {
         display: flex;

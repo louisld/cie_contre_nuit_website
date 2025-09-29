@@ -15,10 +15,8 @@
                 {% for p in projects %}
                 <div class="card card-project-index">
                     <div class="card-image">
-                        <figure class="image is-4-by-3">
-                            <object data="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_cover.jpg') }}" type="image/jpg">
-                                <img src="{{ url_for('static', filename='img/cover.png') }}" alt="Pas d'image">
-                            </object>
+                        <figure class="image is-4by3">
+                            <img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_cover.jpg') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Couverture de {{ p.full_title }}">
                         </figure>
                     </div>
                     <div class="card-content">
