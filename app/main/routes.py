@@ -26,7 +26,7 @@ def index():
 
 @main.route('/la-compagnie')
 def troupe():
-    members = Member.query.all()
+    members = Member.query.order_by(Member.display_order.desc()).all()
 
     description = ""
     if TROUPE_DESCRIPTION_PATH.is_file():

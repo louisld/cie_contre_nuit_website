@@ -39,6 +39,7 @@ class Member(db.Model):
     first_name: Mapped[str] = mapped_column(sa.String(64), nullable=False)
     last_name: Mapped[str] = mapped_column(sa.String(64), nullable=False)
     role: Mapped[str] = mapped_column(sa.String(64), nullable=False, default="Membre")
+    display_order: Mapped[int] = mapped_column(sa.Integer(), nullable=True)
 
     @override
     def __repr__(self) -> str:
