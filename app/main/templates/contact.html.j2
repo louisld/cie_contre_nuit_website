@@ -17,40 +17,48 @@
                     <img src="{{ url_for('static', filename='img/logo_cie_contre_nuit_noir.png') }}" alt="Logo Cie À Contre-Nuit">
                 </div>
                 <section class="section contact-infos">
-                    {% if info.phone %}
-                    <h3 class="is-size-3">Téléphone</h3>
 
-                    <p>{{ info.phone }}</p>
+                    {#{% if info.phone %}
+                        <h3 class="is-size-3">Téléphone</h3>
+
+                        <p>{{ info.phone }}</p>
                     {% endif %}
 
                     {% if info.email %}
-                    <h3 class="is-size-3">Courriel</h3>
+                        <h3 class="is-size-3">Courriel</h3>
 
-                    <p>{{ info.email }}</p>
-                    {% endif %}
+                        <p>{{ info.email }}</p>
+                    {% endif %}#}
 
                     {% if info.networks|length > 0 %}
-                    <h3 class="is-size-3 mt-6">Réseaux</h3>
+                        <h3 class="is-size-3">Réseaux</h3>
 
-                    <div class="contact-network pt-4 is-flex is-flex-direction-column">
-                        {% for n in info.networks %}
-                            <div class="contact-network-item is-flex is-align-items-center">
-                                <div><a href="https://instagram.com/cie_acontrenuit"><i class="{{ n.logo }} has-text-black is-size-1"></i></a></div>
-                                <div class="">{{ n.text }}</div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                    {% if info.credits|length > 0 %}
-                    <h3 class="is-size-3 mt-6">Crédits</h3>
-
-                    <div class="contact-credits pt-4 is-flex is-flex-direction-column">
-                        <ul class="list">
-                            {% for c in info.credits %}
-                                    <li class="list-item">{{ c.text }}</li>
+                        <div class="contact-network pt-4 is-flex is-flex-direction-column">
+                            {% for n in info.networks %}
+                                <div class="icon-text is-align-items-center">
+                                    <span class="icon has-text-black is-large"><a href="{{ n.link }}" target="_blank" rel="noopener noreferrer"><i class="{{ n.logo }} fa-2x"></i></a></span>
+                                    <span><a href="{{ n.link }}" target="_blank" rel="noopener noreferrer">{{ n.text }}</a></span>
+                                </div>
                             {% endfor %}
-                        </ul>
-                    </div>
+                        </div>
+                    {% endif %}
+
+                    {% if info.donations_link %}
+                        <h3 class="is-size-3 mb-6 mt-6">Faire un don</h3>
+
+                        <iframe id="haWidget" allowtransparency="true" src="{{ info.donations_link }}" style="width: 100%; height: 70px; border: none;"></iframe>
+                    {% endif %}
+
+                    {% if info.credits|length > 0 %}
+                        <h3 class="is-size-3 mt-6">Crédits</h3>
+
+                        <div class="contact-credits pt-4 is-flex is-flex-direction-column">
+                            <ul class="list">
+                                {% for c in info.credits %}
+                                        <li class="list-item">{{ c.text }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     {% endif %}
                 </section>
             </div>

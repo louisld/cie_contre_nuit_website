@@ -49,10 +49,12 @@ class Member(db.Model):
 class Network:
     logo: str | None = None
     text: str | None = None
+    link: str | None = None
 
-    def __init__(self, logo: str, text: str) -> None:
+    def __init__(self, logo: str, text: str, link: str) -> None:
         self.logo = logo
         self.text = text
+        self.link = link
 
 class Credits:
     text: str | None = None
@@ -68,6 +70,7 @@ class Info:
 
         self.phone: str | None = None
         self.email: str | None = None
+        self.donations_link: str | None = None
         self.networks: list[type[Network]] = []
         self.credits: list[type[Credits]] = []
         
@@ -78,11 +81,12 @@ class Info:
             data = json.load(f)
             self.phone = data["phone"] if "phone" in data else None
             self.email = data["email"] if "email" in data else None
+            self.donations_link = data["donations_link"] if "donations_link" in data else None
 
             if "networks" in data:
                 for n in data["networks"]:
                     try:
-                        nt = Network(n["logo"], n["text"])
+                        nt = Network(n["logo"], n["text"], n["link"])
                         self.networks.append(nt)
                     except:
                         continue

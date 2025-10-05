@@ -15,14 +15,14 @@
                 {% for p in projects %}
                 <div class="card card-project-index">
                     <div class="card-image">
-                        <figure class="image is-4by3">
-                            <img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_cover.jpg') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Couverture de {{ p.full_title }}">
+                        <figure class="image">
+                            <img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_banner.png') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Banière de {{ p.full_title }}">
                         </figure>
                     </div>
                     <div class="card-content">
                         <div class="content">
-                            <h3><img class="is-size-2-img" src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_title.png') }}" alt="{{ p.short_title }}"></h3>
-                            <p class="card-description">{{ p.short_description | truncate(300) }}</p>
+                            {# <h3><img class="is-size-2-img" src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_title.png') }}" alt="{{ p.short_title }}"></h3> #}
+                            <p class="card-description">{{ p.short_description | truncate(500) }}</p>
                             <p class="has-text-right"><a class="link" href="{{ url_for('main.play', short_title=p.short_title) }}">En savoir plus</a></p>
                         </div>
                     </div>

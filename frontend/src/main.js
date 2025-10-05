@@ -1,11 +1,13 @@
 import './main.scss';
 
 // Fort Awesome
-import {library, dom} from '@fortawesome/fontawesome-svg-core';
-import { faSquareInstagram, faInstagram} from '@fortawesome/free-brands-svg-icons';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faSquareInstagram, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faSquareInstagram);
 library.add(faInstagram);
+library.add(faEnvelope);
 
 document.addEventListener('DOMContentLoaded', () => {
 
