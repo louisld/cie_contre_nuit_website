@@ -50,28 +50,34 @@ a {
     text-decoration: underline;
     font-style: italic;
 }
+
 .markdown {
     h1 {
         font-size: 1.2em;
         font-weight: bold;
         margin-bottom: 0.8em;
     }
+
     h2 {
         font-size: 1.1em;
         font-weight: bold;
         margin-bottom: 0.4em;
     }
+
     p {
         margin-bottom: 0.2em;
         text-align: justify;
     }
+
     ul {
         margin-bottom: 1em;
     }
 }
+
 .description-text p {
     padding-bottom: 1em;
 }
+
 // Sticky footer
 html,
 body {
@@ -108,7 +114,8 @@ body {
 
         .navbar-brand {
             flex-grow: 1;
-            @include mixins.desktop{
+
+            @include mixins.desktop {
                 flex-shrink: 1;
             }
 
@@ -200,10 +207,9 @@ body {
 .contact-infos {
     padding-top: 0;
 
-    .contact-network-icon-container {
-        
-    }
+    .contact-network-icon-container {}
 }
+
 // Play
 .play-poster {
     width: 100%;
@@ -217,14 +223,51 @@ body {
         margin: auto;
         max-height: 90vh;
         border: black 1px solid;
+
         @include mixins.desktop {
             margin-left: auto;
         }
     }
+
     .play-poster-desc {
         padding-right: 3em;
+
         @include mixins.desktop {
             padding-right: 0;
+        }
+    }
+}
+
+.play-pgrid-row-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .play-pgrid-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+
+        img {
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
+
+.play-pgrid-column-container {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+
+    .play-pgrid-column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        justify-content: space-between;
+
+        img {
+            object-fit: cover;
         }
     }
 }

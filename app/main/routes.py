@@ -63,8 +63,13 @@ def play(short_title: str):
     if project is None:
         return flask.abort(404, description="Le projet n'existe pas.")
 
+    pgrid_exists = False
+    if Path(f"app/main/templates/play/uploads/{project.id}_picture_grid.html.j2").exists():
+        pgrid_exists = True
+
     return render_template(
         "play.html.j2",
-        project = project
+        project = project,
+        pgrid_exists=pgrid_exists
     )
 
