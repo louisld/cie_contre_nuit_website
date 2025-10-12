@@ -31,7 +31,7 @@
                     {% endif %}#}
 
                     {% if info.networks|length > 0 %}
-                        <h3 class="is-size-3">Réseaux</h3>
+                        <h2 class="mb-4"><img src="{{ url_for('static', filename='main/contact/networks.png') }}" alt="Réseaux" class="is-size-2-img"></h2>
 
                         <div class="contact-network pt-4 is-flex is-flex-direction-column">
                             {% for n in info.networks %}
@@ -44,13 +44,13 @@
                     {% endif %}
 
                     {% if info.donations_link %}
-                        <h3 class="is-size-3 mb-6 mt-6">Faire un don</h3>
+                        <h2 class="mt-6 mb-6"><img src="{{ url_for('static', filename='main/contact/donations.png') }}" alt="Faire un don" class="is-size-2-img"></h2>
 
                         <iframe id="haWidget" allowtransparency="true" src="{{ info.donations_link }}" style="width: 100%; height: 70px; border: none;"></iframe>
                     {% endif %}
 
                     {% if info.credits|length > 0 %}
-                        <h3 class="is-size-3 mt-6">Crédits</h3>
+                        <h2 class="mt-6 mb-4"><img src="{{ url_for('static', filename='main/contact/credits.png') }}" alt="Crédits" class="is-size-2-img"></h2>
 
                         <div class="contact-credits pt-4 is-flex is-flex-direction-column">
                             <ul class="list">

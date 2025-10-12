@@ -12,7 +12,7 @@
     <div class="container">
         {# Current #}
         <section class="section">
-            <h2 class="mb-4"><img src="{{ url_for('static', filename='main/projects/ongoing.png') }}" alt="En cours de création" class="is-size-2-img"></h2>
+            <h2 class="mb-6"><img src="{{ url_for('static', filename='main/projects/ongoing.png') }}" alt="En cours de création" class="is-size-2-img"></h2>
 
             <div class="fixed-grid has-1-cols">
                 <div class="grid">
@@ -32,7 +32,7 @@
                                             <b>Prochainement...</b>
                                         {% elif p.start_date and p.end_date %}
                                             {% if p.start_date.year == p.end_date.year %}
-                                                <b>Année {{ p.start_date.year }}</b>
+                                                <b>Année {{ p.start_date.year - 1 }} - {{ p.start_date.year }}</b>
                                             {% else %}
                                                 <b>Années {{ p.start_date.year }} - {{p.end_date.year }}</b>
                                             {% endif %}
@@ -50,7 +50,7 @@
         </section>
         {# Archives #}
          <section class="section mb-6">
-            <h2 class="mb-4"><img src="{{ url_for('static', filename='main/projects/before.png') }}" alt="Avant la compagnie" class="is-size-2-img"></h2>
+            <h2 class="mb-6"><img src="{{ url_for('static', filename='main/projects/before.png') }}" alt="Avant la compagnie" class="is-size-2-img"></h2>
 
             <div class="fixed-grid has-1-cols">
                 <div class="grid">
@@ -70,7 +70,7 @@
                                             <b>Prochainement...</b>
                                         {% elif p.start_date and p.end_date %}
                                             {% if p.start_date.year == p.end_date.year %}
-                                                <b>Année {{ p.start_date.year }}</b>
+                                                <b>Année {{ p.start_date.year - 1 }} - {{ p.start_date.year }}</b>
                                             {% else %}
                                                 <b>Années {{ p.start_date.year }} - {{p.end_date.year }}</b>
                                             {% endif %}

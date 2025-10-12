@@ -214,11 +214,17 @@ body {
     }
 
     img {
-        @include mixins.desktop {
-            margin-left: auto;
-        }
         margin: auto;
         max-height: 90vh;
         border: black 1px solid;
+        @include mixins.desktop {
+            margin-left: auto;
+        }
+    }
+    .play-poster-desc {
+        padding-right: 3em;
+        @include mixins.desktop {
+            padding-right: 0;
+        }
     }
 }
