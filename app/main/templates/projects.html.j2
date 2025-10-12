@@ -32,9 +32,9 @@
                                             <b>Prochainement...</b>
                                         {% elif p.start_date and p.end_date %}
                                             {% if p.start_date.year == p.end_date.year %}
-                                                <b>Année {{ p.start_date.year - 1 }} - {{ p.start_date.year }}</b>
+                                                <b>{{ p.start_date.year - 1 }} - {{ p.start_date.year }}</b>
                                             {% else %}
-                                                <b>Années {{ p.start_date.year }} - {{p.end_date.year }}</b>
+                                                <b>{{ p.start_date.year }} - {{p.end_date.year }}</b>
                                             {% endif %}
                                         {% endif %}
                                     </div>
@@ -70,9 +70,9 @@
                                             <b>Prochainement...</b>
                                         {% elif p.start_date and p.end_date %}
                                             {% if p.start_date.year == p.end_date.year %}
-                                                <b>Année {{ p.start_date.year - 1 }} - {{ p.start_date.year }}</b>
+                                                <b>{{ p.start_date.year - 1 }} - {{ p.start_date.year }}</b>
                                             {% else %}
-                                                <b>Années {{ p.start_date.year }} - {{p.end_date.year }}</b>
+                                                <b>{{ p.start_date.year }} - {{p.end_date.year }}</b>
                                             {% endif %}
                                         {% endif %}
                                     </div>
