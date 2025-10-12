@@ -62,8 +62,11 @@ a {
         margin-bottom: 0.4em;
     }
     p {
-        margin-bottom: 1em;
+        margin-bottom: 0.2em;
         text-align: justify;
+    }
+    ul {
+        margin-bottom: 1em;
     }
 }
 .description-text p {
@@ -211,8 +214,11 @@ body {
     }
 
     img {
-        margin-left: auto;
-        height: 90vh;
+        @include mixins.desktop {
+            margin-left: auto;
+        }
+        margin: auto;
+        max-height: 90vh;
         border: black 1px solid;
     }
 }
