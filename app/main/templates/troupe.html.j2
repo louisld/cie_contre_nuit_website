@@ -24,8 +24,8 @@
                     {% for m in members %}
                         <div class="card">
                             <div class="card-image">
-                                <figure class="image is-4-by-3">
-                                    <img src="{{ url_for('static', filename='main/troupe/uploads/' + m.id|string + '_cover.png') }}" onerror="this.src='{{ url_for('static', filename='main/troupe/cover.png') }}'" alt="Pas d'image de profil">
+                                <figure class="image is-1by1">
+                                    <img src="{{ url_for('static', filename='main/troupe/uploads/' + m.id|string + '_cover.jpg') }}" onerror="this.src='{{ url_for('static', filename='main/troupe/cover.png') }}'" alt="Pas d'image de profil">
                                 </figure>
                             </div>
                             <div class="card-content">
