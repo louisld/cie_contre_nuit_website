@@ -62,11 +62,13 @@ a {
         margin-bottom: 0.4em;
     }
     p {
-        margin: 0.5em 0 0.5em 0;
+        margin-bottom: 1em;
         text-align: justify;
     }
 }
-
+.description-text p {
+    padding-bottom: 1em;
+}
 // Sticky footer
 html,
 body {
@@ -114,7 +116,7 @@ body {
         }
 
         .navbar-start {
-            justify-content: space-around;
+            justify-content: flex-end;
             flex-grow: 3;
             margin-inline-end: 0;
         }
@@ -123,7 +125,7 @@ body {
     .header-title {
         display: flex;
         justify-content: center;
-        padding-top: 3rem;
+        padding-top: 1rem;
         margin-top: 2vh;
         height: 78%;
         position: relative;
@@ -189,7 +191,7 @@ body {
 
 // Contact
 .contact-logo img {
-    max-height: 30rem;
+    max-height: 27rem;
 }
 
 .contact-infos {
@@ -212,10 +214,5 @@ body {
         margin-left: auto;
         height: 90vh;
         border: black 1px solid;
-    }
-
-    .play-poster-desc {
-        border: black 1px solid;
-        border-left: none;
     }
 }

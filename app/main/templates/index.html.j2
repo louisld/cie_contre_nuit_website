@@ -16,7 +16,7 @@
                 <div class="card card-project-index">
                     <div class="card-image">
                         <figure class="image">
-                            <img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_banner.png') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Banière de {{ p.full_title }}">
+                            <a href="{{ url_for('main.play', short_title=p.short_title) }}"><img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_banner.png') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Banière de {{ p.full_title }}"></a>
                         </figure>
                     </div>
                     <div class="card-content">

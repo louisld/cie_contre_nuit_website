@@ -16,10 +16,10 @@
     {% endfor %}
 </head>
 <body>
-    <header class="header">
+    <header class="header mb-6">
         <nav class="navbar is-black" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a href="{{ url_for('main.index') }}" class="navbar-item">
+                <a href="{{ url_for('main.index') }}" class="navbar-item ml-4">
                     <img src="{{ url_for('static', filename='img/logo_cie_contre_nuit_rond_blanc.png') }}" alt="Logo Compagnie a Contre-Nuit">
                 </a>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
@@ -47,7 +47,7 @@
         {% block content %}{% endblock %}
     </div>
 
-    <footer class="footer has-text-centered">
+    <footer class="footer has-text-centered mt-6">
         <p class="mb-4"><a href="https://instagram.com/cie_acontrenuit" class="has-text-white is-flex is-align-items-center is-justify-content-center"><i class="fab fa-instagram is-size-4"></i> @cie_acontrenuit</a></p>
         <p>Site internet réalisé par Anna Raffault et Louis Grandvaux</p>
         <p>© 2025 COMPAGNIE À CONTRE-NUIT</p>

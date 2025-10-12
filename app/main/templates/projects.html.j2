@@ -12,7 +12,7 @@
     <div class="container">
         {# Current #}
         <section class="section">
-            <h2 class="mb-6"><img src="{{ url_for('static', filename='main/projects/ongoing.png') }}" alt="En cours de création" class="is-size-2-img"></h2>
+            <h2 class="mb-4"><img src="{{ url_for('static', filename='main/projects/ongoing.png') }}" alt="En cours de création" class="is-size-2-img"></h2>
 
             <div class="fixed-grid has-1-cols">
                 <div class="grid">
@@ -21,7 +21,7 @@
                         <div class="card card-horizontal">
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_banner.png') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Couverture de {{ p.full_title }}">
+                                    <a href="{{ url_for('main.play', short_title=p.short_title) }}"><img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_banner.png') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Couverture de {{ p.full_title }}"></a>
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -49,8 +49,8 @@
             </div>
         </section>
         {# Archives #}
-         <section class="section">
-            <h2 class="mb-6"><img src="{{ url_for('static', filename='main/projects/before.png') }}" alt="Avant la compagnie" class="is-size-2-img"></h2>
+         <section class="section mb-6">
+            <h2 class="mb-4"><img src="{{ url_for('static', filename='main/projects/before.png') }}" alt="Avant la compagnie" class="is-size-2-img"></h2>
 
             <div class="fixed-grid has-1-cols">
                 <div class="grid">
@@ -59,7 +59,7 @@
                         <div class="card card-horizontal">
                             <div class="card-image">
                                 <figure class="image">
-                                    <img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_banner.png') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Couverture de {{ p.full_title }}">
+                                    <a href="{{ url_for('main.play', short_title=p.short_title) }}"><img src="{{ url_for('static', filename='main/projects/uploads/'+p.id|string+'_banner.png') }}" onerror="this.src='{{ url_for('static', filename='img/cover.png') }}'" alt="Couverture de {{ p.full_title }}"></a>
                                 </figure>
                             </div>
                             <div class="card-content">
