@@ -10,6 +10,7 @@
 
 {% block content %}
     <div class="container mt-6 mb-6">
+        <h2 class="mb-6"><img src="{{ url_for('static', filename='main/index/soon.png') }}" alt="Prochainement" class="is-size-2-img"></h2>
         <div class="fixed-grid has-2-cols has-1-cols-mobile">
             <div class="grid is-gap-6">
                 {% for p in projects %}

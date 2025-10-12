@@ -17,7 +17,7 @@ PLAY_POSTER_DESC = {
 
 @main.route('/')
 def index():
-    projects = Project.query.order_by(Project.is_future.desc(), Project.start_date.desc()).all()
+    projects = Project.query.filter_by(active=True).order_by(Project.is_future.desc(), Project.start_date.desc()).all()
 
     return render_template(
         "index.html.j2",
