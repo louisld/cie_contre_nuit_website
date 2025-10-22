@@ -13,7 +13,7 @@
         <div class="fixed-grid has-2-cols has-1-cols-mobile play-poster">
             <div class="grid is-gap-0">
                 <img src="{{ url_for('static', filename='main/projects/uploads/' + project.id|string + '_poster.png') }}" alt="{{ project.short_title }} poster">
-                <div class="play-poster-desc pl-6 markdown">
+                <div class="play-poster-desc markdown">
                     {{ project.poster_desc|markdown }}    
                 </div>
             </div>

@@ -23,7 +23,11 @@ a {
 }
 
 .is-size-2-img {
-    height: 4rem;
+    height: 2rem;
+
+    @include mixins.tablet {
+        height: 3rem;
+    }
 }
 
 .is-size-4-img {
@@ -90,12 +94,19 @@ body {
 .header {
     background-color: black;
     color: white;
-    height: 100vh;
+    height: 60vh;
+
+    @include mixins.tablet {
+        height: 100vh;
+    }
 
     .navbar {
         font-size: 3rem;
         background-color: black;
-        height: 20%;
+        height: 25%;
+        @include mixins.tablet {
+            height: 20%;
+        }
 
         .navbar-menu {
             background-color: black;
@@ -137,17 +148,26 @@ body {
         justify-content: center;
         padding-top: 1rem;
         margin-top: 2vh;
-        height: 78%;
         position: relative;
+        height: 75%;
+        @include mixins.tablet {
+            height: 78%;
+        }
 
         h1 {
             font-size: 5rem;
             line-height: 0;
             height: 100%;
+            display: flex;
 
             img {
                 max-height: 100%;
-                width: auto;
+                width: 100%;
+                margin-top: auto;
+                margin-bottom: auto;
+                @include mixins.tablet {
+                    width: auto;
+                }
             }
         }
     }
@@ -220,9 +240,16 @@ body {
     }
 
     img {
+        margin-right: auto;
         margin-left: auto;
         max-height: 90vh;
         border: black 1px solid;
+        width: calc(100% - 2rem);
+
+        @include mixins.tablet {
+            margin-right: 0;
+            width: auto;
+        }
 
         @include mixins.desktop {
             margin-left: auto;
@@ -230,7 +257,14 @@ body {
     }
 
     .play-poster-desc {
-        padding-right: 3em;
+
+        margin: 3rem 1rem 0 1rem;
+
+        @include mixins.tablet {
+            margin: 0;
+            padding-right: 3rem;
+            padding-left: 3rem;
+        }
 
         @include mixins.desktop {
             padding-right: 0;
