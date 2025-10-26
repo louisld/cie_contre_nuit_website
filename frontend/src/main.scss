@@ -178,6 +178,9 @@ body {
         bottom: 0;
         width: 100%
     }
+    &:has(div.header-title-index) {
+        height: 100vh;
+    }
 }
 
 .footer {
@@ -279,8 +282,13 @@ body {
 
     .play-pgrid-row {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         gap: 15px;
+
+        @include mixins.tablet {
+            flex-direction: row;
+        }
 
         img {
             object-fit: cover;
@@ -291,8 +299,13 @@ body {
 
 .play-pgrid-column-container {
     display: flex;
+    flex-direction: column;
     gap: 15px;
     justify-content: space-between;
+
+    @include mixins.tablet {
+        flex-direction: row;
+    }
 
     .play-pgrid-column {
         display: flex;
