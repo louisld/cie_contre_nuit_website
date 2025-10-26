@@ -8,6 +8,7 @@ from markdown import markdown
 
 from ..main import main
 from app.main.models import Info, Member, Project
+from app.extensions import sitemap
 
 TROUPE_DESCRIPTION_PATH = Path("app/static/main/troupe/uploads/description.md")
 PLAY_POSTER_DESC = {
@@ -73,3 +74,8 @@ def play(short_title: str):
         pgrid_exists=pgrid_exists
     )
 
+@sitemap.register_generator
+def play():
+    projects = Project.query.order_by(Project.is_future.desc(), Project.start_date.desc()).all()
+    for p in projects:
+        yield 'main.play', {"short_title": p.short_title}

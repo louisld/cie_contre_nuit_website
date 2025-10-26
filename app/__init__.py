@@ -6,7 +6,7 @@ from flask import Flask
 
 from config import BaseConfig, config_by_name
 
-from app.extensions import db, migrate
+from app.extensions import db, migrate, sitemap
 from app.filters import register_filters
 from app.helpers.vite import vite_asset
 from app.main import main
@@ -42,6 +42,7 @@ def define_blueprints(app: Flask):
 def register_extensions(app: Flask):
     db.init_app(app)
     migrate.init_app(app, db)
+    sitemap.init_app(app)
 
 def configure_jinja(app: Flask):
     @app.context_processor
