@@ -181,6 +181,9 @@ body {
     &:has(div.header-title-index) {
         height: 100vh;
     }
+    .header-title.header-title-index h1 img {
+        margin-top: 0rem;
+    }
 }
 
 .footer {
