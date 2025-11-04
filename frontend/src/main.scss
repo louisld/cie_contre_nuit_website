@@ -195,8 +195,15 @@ body {
     &:has(div.header-title-index) {
         height: 100vh;
     }
-    .header-title.header-title-index h1 img {
-        margin-top: 0rem;
+    .header-title.header-title-index h1 {
+        display: block;
+        img {
+            margin-top: 0rem;
+            max-height: 100%;
+            width: 100%;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
     }
 }
 
