@@ -160,23 +160,37 @@ body {
             height: 100%;
             display: flex;
 
-            img {
-                max-height: 100%;
+            picture {
+                display: block;
+                height: 100%;
                 width: 100%;
-                margin-top: auto;
-                margin-bottom: auto;
-                @include mixins.tablet {
-                    width: auto;
+                img {
+                    max-height: 100%;
+                    width: 100%;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    @include mixins.tablet {
+                        width: auto;
+                    }
                 }
             }
         }
     }
 
-    .header-title.header-title-contact h1 img {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%
+    .header-title.header-title-contact {
+        background: #000000;
+        background: linear-gradient(180deg,rgba(0, 0, 0, 1) 50%, rgba(255, 255, 255, 1) 50%);
+        @include mixins.tablet {
+            background: #000000;
+        }
+        h1 img {
+            @include mixins.tablet {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+            }
+        }
     }
     &:has(div.header-title-index) {
         height: 100vh;

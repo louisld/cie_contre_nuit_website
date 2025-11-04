@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block header_title %}
+<picture>
+    <source srcset="{{ url_for('static', filename='main/projects/uploads/' + project.id|string + '_banner_mobile.png') }}" media="(max-width: 768px)">
     <img src="{{ url_for('static', filename='main/projects/uploads/' + project.id|string + '_banner.png') }}" alt="{{ project.short_title }}">
+</picture>
 {% endblock %}
 
 {% block content %}
