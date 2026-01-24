@@ -256,6 +256,16 @@ body {
 
     .contact-network-icon-container {}
 }
+.contact-about {
+    h3 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 0.3em;
+    }
+    h3:not(:first-of-type) {
+        margin-top: 0.7em;
+    }
+}
 
 // Play
 .play-poster {

@@ -63,6 +63,10 @@ class Credits:
         self.text = text
 
 
+class About:
+    text: str | None = None
+
+
 class Info:
     file_path= pathlib.Path(__file__).parent.parent / pathlib.Path("static/main/contact/uploads/info.json")
 
@@ -73,6 +77,7 @@ class Info:
         self.donations_link: str | None = None
         self.networks: list[type[Network]] = []
         self.credits: list[type[Credits]] = []
+        self.about: About = About()
         
         if file_path is not None:
             self.file_path = pathlib.Path(__file__).parent.parent / pathlib.Path(file_path)
@@ -97,3 +102,5 @@ class Info:
                         self.credits.append(cr)
                     except:
                         continue
+            if "about" in data:
+                self.about.text = data["about"]["text"]
