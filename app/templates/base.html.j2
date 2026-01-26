@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/img/favicon_96x96.png">
+    <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
+    <meta name="apple-touc-mobile-web-app-title" content="Compagnie à Contre-Nuit">
     <title>{% block title -%}{%- endblock %}</title>
+
+    {# META #}
+    {% block meta %}{% endblock %}
 
     {# DEV ASSETS #}
     {% if vite_asset('main.js').client %}
@@ -37,15 +44,41 @@
                 </div>
             </div>
         </nav>
-        <div class="header-title {{ header_title_class }}">
+        <main class="header-title {{ header_title_class }}">
             <h1>{% block header_title %}{% endblock %}</h1>
             {% block header_img %}{% endblock %}
-        </div>
+        </main>
     </header>
 
     <div class="main-content">
         {% block content %}{% endblock %}
     </div>
+
+    <script type='application/ld+json'>
+    {
+        "@context": "http://www.schema.org",
+        "@type": "PerformingGroup",
+        "name": "Compagnie à Contre-Nuit",
+        "url": "https://acontrenuit.fr",
+        "logo": "https://acontrenuit.fr/static/img/favicon_96x96.png",
+        "description": "La Compagnie à Contre-Nuit est née d'une passion pour le théâtre d'étudiants qui ont voulu prolonger l'aventure au-delà de leurs études. Elle met en lumière des sujets variés et souvent complexes, qui nous tiennent à cœur. Nos créations cherchent avant tout à susciter l'émotion et le débat, en ouvrant un espace où l'intime rejoint l'universel.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "19 rue Eugène Gibez ",
+            "addressLocality": "Paris",
+            "postalCode": "75015",
+            "addressCountry": "France"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "name": "Compagnie à Contre-Nuit",
+        "description": "La Compagnie à Contre-Nuit est née d'une passion pour le théâtre d'étudiants qui ont voulu prolonger l'aventure au-delà de leurs études. Elle met en lumière des sujets variés et souvent complexes, qui nous tiennent à cœur. Nos créations cherchent avant tout à susciter l'émotion et le débat, en ouvrant un espace où l'intime rejoint l'universel.",
+        "url": "https://acontrenuit.fr",
+        "inLanguage": "fr_Fr"
+    </script>
 
     <footer class="footer has-text-centered mt-6">
         <p class="mb-4"><a href="https://instagram.com/cie_acontrenuit" class="has-text-white is-flex is-align-items-center is-justify-content-center"><i class="fab fa-instagram is-size-4"></i> @cie_acontrenuit</a></p>

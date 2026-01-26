@@ -38,6 +38,16 @@
                                 </div>
                             </div>
                         </div>
+                        <script type='application/ld+json'>
+                            {
+                            "@context": "http://www.schema.org",
+                            "@type": "person",
+                            "name": "{{ m.first_name }} {{ m.last_name }}",
+                            "jobTitle": "{{ m.role }}",
+                            "image": "{{ url_for('static', filename='main/troupe/uploads/' + m.id|string + '_cover.jpg', _external=True) }}",
+                            "memberOf": "Compagnie à Contre-Nuit"
+                            }
+                        </script>
                     {% endfor %}
                 </div>
             </div>

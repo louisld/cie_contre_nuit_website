@@ -5,6 +5,12 @@
     Compagnie à Contre-Nuit
 {% endblock %}
 
+{% block meta %}
+    <meta name="description" content="La Compagnie à Contre-Nuit est née d'une passion pour le théâtre d'étudiants qui ont voulu prolonger l'aventure au-delà de leurs études. Elle met en lumière des sujets variés et souvent complexes, qui nous tiennent à cœur. Nos créations cherchent avant tout à susciter l'émotion et le débat, en ouvrant un espace où l'intime rejoint l'universel.">
+    <meta name="author" content="Anna Raffault et Louis Grandvaux">
+    <link rel="canonical" content="{{ config.SERVER_NAME }}">
+{% endblock %}
+
 {% block header_title %}
     <img src="{{ url_for('static', filename='main/index/banner_a_contre_nuit.png') }}" alt="À Contre-Nuit">
 {% endblock %}

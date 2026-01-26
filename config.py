@@ -11,7 +11,7 @@ class BaseConfig():
         'pool_size': 10,            
         'max_overflow': 20  
     }
-
+    SERVER_NAME = os.environ.get("SERVER_NAME")
 
 class DevelopmentConfig(BaseConfig):
     DEBUG=True
