@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="px-4">
                     {% for place in p.representation_places %}
                         <h2 class="mt-4 is-dark-3 is-inline-block"><img src="{{ url_for('static', filename='main/projects/uploads/representation_places/' + place.id|string + '_title.png') }}" alt="{{ place.name }}" class="is-size-2-img"></h2>
 
