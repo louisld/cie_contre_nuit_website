@@ -41,6 +41,7 @@ class RepresentationPlace(db.Model):
 
     id: Mapped[int] = mapped_column(sa.Integer(), primary_key=True)
     name: Mapped[str] = mapped_column(sa.String(255), nullable=False)
+    ticket_link: Mapped[str] = mapped_column(sa.String(255), nullable=True)
 
     project_id: Mapped[int] = mapped_column(
         sa.ForeignKey("main_project.id"),
