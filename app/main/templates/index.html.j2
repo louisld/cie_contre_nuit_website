@@ -35,6 +35,24 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    {% for place in p.representation_places %}
+                        <h2 class="mt-4 is-dark-3 is-inline-block"><img src="{{ url_for('static', filename='main/projects/uploads/representation_places/' + place.id|string + '_title.png') }}" alt="{{ place.name }}" class="is-size-2-img"></h2>
+
+                        {% for date in place.representation_dates %}
+                            <div class="is-flex is-flex-direction-column">
+                                <div class="bb-black-4 mt-5">
+                                    <img src="{{ url_for('static', filename='main/projects/uploads/representation_dates/' + date.id|string + '_datetime.png') }}" alt="{{ date.date }}" class="is-size-2-img">
+                                </div>
+                            </div>
+                        {% endfor %}
+                        {% if place.representation_dates|length > 0%}
+                            <div class="mt-4 is-flex is-flex is-justify-content-flex-end">
+                                <img src="{{ url_for('static', filename='main/index/ticket_here.png') }}" alt="Billet ici" class="is-size-2-img">
+                            </div>
+                        {% endif%}
+                    {% endfor %}
+                </div>
                 {% endfor %}
             </div>
         </div>

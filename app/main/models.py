@@ -1,13 +1,14 @@
 import datetime
 import json
 import pathlib
-from typing import override
+from typing import override, List
 
 from flask import current_app
 import sqlalchemy as sa
 from sqlalchemy.orm import (
     Mapped,
-    mapped_column
+    mapped_column,
+    relationship
 )
 
 from app.extensions import db
@@ -28,9 +29,43 @@ class Project(db.Model):
     start_date: Mapped[datetime.date] = mapped_column(sa.Date(), nullable=True)
     end_date: Mapped[datetime.date] = mapped_column(sa.Date(), nullable=True)
 
+    representation_places: Mapped[List["RepresentationPlace"]] = relationship(back_populates="project")
+
     @override
     def __repr__(self) -> str:
         return f"<Project #{self.id} - {self.short_title}>"
+
+
+class RepresentationPlace(db.Model):
+    __tablename__: str = "main_representation_place"
+
+    id: Mapped[int] = mapped_column(sa.Integer(), primary_key=True)
+    name: Mapped[str] = mapped_column(sa.String(255), nullable=False)
+
+    project_id: Mapped[int] = mapped_column(
+        sa.ForeignKey("main_project.id"),
+        nullable=False
+    )
+    project: Mapped["Project"] = relationship(back_populates="representation_places")
+    representation_dates: Mapped[List["RepresentationDate"]] = relationship(back_populates="representation_place")
+
+    @override
+    def __repr__(self) -> str:
+        return f"<Representation place #{self.id}>"
+    
+
+class RepresentationDate(db.Model):
+    __tablename__: str = "main_representation_date"
+
+    id: Mapped[int] = mapped_column(sa.Integer(), primary_key=True)
+    date: Mapped[datetime.datetime] = mapped_column(sa.DateTime(), nullable=False)
+
+    representation_place_id: Mapped[int] = mapped_column(
+        sa.ForeignKey("main_representation_place.id"),
+        nullable=False
+    )
+    representation_place: Mapped["RepresentationPlace"] = relationship(back_populates="representation_dates")
+
 
 class Member(db.Model):
     __tablename__:str = "main_member"
