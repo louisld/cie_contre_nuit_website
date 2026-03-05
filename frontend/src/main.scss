@@ -22,6 +22,14 @@ a {
     filter: invert(1);
 }
 
+.is-size-1-5-img {
+    height: 1.5rem;
+
+    @include mixins.tablet {
+        height: 2.5rem;
+    }
+}
+
 .is-size-2-img {
     height: 2rem;
 
