@@ -6,10 +6,16 @@ from flask import Flask
 
 from config import BaseConfig, config_by_name
 
-from app.extensions import db, migrate, sitemap
+from app.extensions import (
+    db,
+    migrate,
+    sitemap,
+    login_manager
+)
 from app.filters import register_filters
 from app.helpers.vite import vite_asset
 from app.main import main
+from app.auth import auth
 
 def create_app():
     app = Flask(__name__)
@@ -38,11 +44,19 @@ def load_config(app: Flask):
 
 def define_blueprints(app: Flask):
     app.register_blueprint(main)
+    app.register_blueprint(auth, url_prefix="/auth")
 
 def register_extensions(app: Flask):
     db.init_app(app)
     migrate.init_app(app, db)
     sitemap.init_app(app)
+    login_manager.init_app(app)
+
+    from app.auth.models import User
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(user_id)
 
 def configure_jinja(app: Flask):
     @app.context_processor
