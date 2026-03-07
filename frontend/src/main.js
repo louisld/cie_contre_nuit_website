@@ -3,12 +3,13 @@ import './main.scss';
 // Fort Awesome
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faSquareInstagram, faInstagram, faSquareGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faUpload } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faSquareInstagram);
 library.add(faInstagram);
 library.add(faEnvelope);
 library.add(faSquareGithub);
+library.add(faUpload);
 
 document.addEventListener('DOMContentLoaded', () => {
 

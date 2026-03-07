@@ -16,6 +16,7 @@ from app.filters import register_filters
 from app.helpers.vite import vite_asset
 from app.main import main
 from app.auth import auth
+from app.admin import admin
 
 def create_app():
     app = Flask(__name__)
@@ -45,6 +46,7 @@ def load_config(app: Flask):
 def define_blueprints(app: Flask):
     app.register_blueprint(main)
     app.register_blueprint(auth, url_prefix="/auth")
+    app.register_blueprint(admin, url_prefix="/admin")
 
 def register_extensions(app: Flask):
     db.init_app(app)

@@ -1,0 +1,25 @@
+{% extends "base_admin.html.j2"%}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block content%}
+    <div class="container mt-6">
+        <h1 class="is-size-1 mb-6">Dashboard</h1>
+
+        <nav class="breadcrumb mb-6" aria-label="breadcrumbs">
+            <ul>
+                <li class="is-active"><a href="{{ url_for('admin.dashboard') }}" aria-current="page">Dashboard</a></li>
+            </ul>
+        </nav>
+
+        <nav class="panel">
+            <p class="panel-heading">Liste des modules</p>
+            <a href="{{ url_for('admin.index') }}" class="panel-block">Page principale</a>
+            <a href="{{ url_for('admin.troupe') }}" class="panel-block">La Compagnie</a>
+            <a href="" class="panel-block">Nos Projets</a>
+            <a href="" class="panel-block">Contact</a>
+        </nav>
+    </div>
+{% endblock %}

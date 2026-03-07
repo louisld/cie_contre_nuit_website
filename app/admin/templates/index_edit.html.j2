@@ -1,0 +1,21 @@
+{% extends "base_admin.html.j2"%}
+
+{% block title %}
+    Page d'accueil
+{% endblock %}
+
+{% block content%}
+    <div class="container mt-6">
+        <h1 class="is-size-1 mb-6">Dashboard</h1>
+
+        <nav class="breadcrumb mb-6" aria-label="breadcrumbs">
+            <ul>
+                <li><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+                <li class="is-active"><a href="{{ url_for('admin.index') }}" aria-current="page">Page principale</a></li>
+
+            </ul>
+        </nav>
+
+        Rien à modifier ici...
+    </div>
+{% endblock %}

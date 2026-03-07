@@ -28,7 +28,7 @@ def login():
         if user is None or user.check_password(login_form.password.data):
             return redirect(url_for("auth.login"))
         login_user(user)
-        return redirect(url_for("main.index"))
+        return redirect(url_for("admin.dashboard"))
     return render_template(
         "login.html.j2",
         login_form=login_form
